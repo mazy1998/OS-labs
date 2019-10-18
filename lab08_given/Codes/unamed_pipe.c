@@ -1,7 +1,11 @@
 #include<stdio.h>
 #include<unistd.h>
+#include <sys/wait.h>
 
 int main(void) {
+
+	int status;
+
 	int pipefd[2];
 	int pid;
 	char buffer[15];
@@ -24,7 +28,8 @@ int main(void) {
 	else {
 		printf("unamed_pipe [ERROR] Error in creating child process\n");	
 	}
-	if(pid > 0) wait();
+	if(pid > 0) wait(&status);
+	
 	return 0;
 }
 	

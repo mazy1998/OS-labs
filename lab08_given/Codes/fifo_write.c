@@ -6,12 +6,13 @@
 
 int main(void) {
 	int fd, retval;
-	char buffer[] = "TESTDATA";
+	char buffer[] = "TESTDATAPPPPPPPPPPPDDDDDDDDDD";
 	
 	fflush(stdin);
 	retval = mkfifo("/tmp/myfifo",0666);
 	fd = open("/tmp/myfifo",O_WRONLY);
 	write(fd,buffer,sizeof(buffer));
+	sleep(15);
 	close(fd);
 	return 0;
 }

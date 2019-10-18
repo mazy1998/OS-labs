@@ -6,12 +6,14 @@
 
 int main(void) {
 	int fd, retval;
-	char buffer[] = "TESTDATA";
+	char buffer[10];
 	
 	fd = open("/tmp/myfifo",O_RDONLY);
-	retval = read(fd, buffer, sizeof(buffer));
+	// retval = read(fd, buffer, sizeof(buffer));
+	retval = read(fd, buffer, 9);
+	buffer[retval] = '\0';
 	fflush(stdin);
-	write(1, buffer, sizeof(buffer));
+	write(1, buffer, retval);
 	printf("\n");	
 	close(fd);
 	return 0;
