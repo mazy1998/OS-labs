@@ -11,4 +11,8 @@ p1: file_input.c
 	gcc -o file_input file_input.c -Wall
 
 
+linuxHead: linuxHead.c
+	gcc -o linuxHead linuxHead.c -Wall
+
+
 
