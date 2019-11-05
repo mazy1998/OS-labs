@@ -10,11 +10,9 @@ main(int argc, char *argv[])
 {
 	pthread_t t1;
 	void *res;
-	int s;
+
 
 	srand(time(NULL));
-
-	//int a[1000000000];
 	int *a = malloc(100000*sizeof(int));
 	if (a == NULL) {
 		perror("error: memory failure");
